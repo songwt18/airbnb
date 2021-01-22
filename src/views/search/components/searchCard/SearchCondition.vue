@@ -1,0 +1,470 @@
+<template>
+  <div id="search-condition">
+      <div
+        class="condition-item"
+        v-for="(item,index) in locationData"
+        :key=index
+      >
+       <div class="item-title">{{item.title}}</div>
+       <div
+        v-for="(item1,index1) in item.local"
+        :key=index1
+        class="item-local"
+        @click="itemClick(item1)"
+       >
+        {{item1.name}}
+       </div>
+      </div>
+      <div class="white"></div>
+  </div>
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            locationData: [
+                { 
+                    title:'热门',
+                    local:[
+                        {
+                        name:'上海新天地',
+                        desc:'14%房客选择'
+                        },
+                        {
+                        name:'田子坊',
+                        desc:'9%房客选择'
+                        },
+                        {
+                        name:'外滩',
+                        desc:''
+                        },
+                        {
+                        name:'陆家嘴',
+                        desc:''
+                        },
+                        {
+                        name:'上海迪士尼乐园',
+                        desc:''
+                        },
+                        {
+                        name:'虹桥火车站',
+                        desc:''
+                        },
+
+                        {
+                        name:'静安寺/南京西路',
+                        desc:''
+                        },
+                        {
+                        name:'人民广场',
+                        desc:''
+                        }
+                    ]
+                },
+                { 
+                    title:'景点',
+                    local:[
+                        {
+                        name:'静安寺',
+                        desc:'10%房客选择'
+                        },
+                        {
+                        name:'南京步行路',
+                        desc:'9%房客选择'
+                        },
+                        {
+                        name:'东方明珠电视塔',
+                        desc:''
+                        },
+                        {
+                        name:'老城隍庙',
+                        desc:''
+                        },
+                        {
+                        name:'陆家嘴',
+                        desc:''
+                        },
+                        {
+                        name:'七宝老街',
+                        desc:''
+                        },
+
+                        {
+                        name:'上海中心大厦',
+                        desc:''
+                        },
+                        {
+                        name:'上海迪士尼乐园',
+                        desc:''
+                        },
+                        {
+                        name:'上海野生动物园',
+                        desc:''
+                        },
+                        {
+                        name:'朱家角古镇',
+                        desc:''
+                        },
+                        {
+                        name:'豫园',
+                        desc:''
+                        },
+                        {
+                        name:'中山公园',
+                        desc:''
+                        },
+                        {
+                        name:'徐家汇',
+                        desc:''
+                        }
+                    ]
+                },
+                { 
+                    title:'地铁',
+                    local:[
+                        {
+                        name:'1号线',
+                        desc:''
+                        },
+                        {
+                        name:'2号线',
+                        desc:''
+                        },
+                        {
+                        name:'2号线东延伸段',
+                        desc:''
+                        },
+                        {
+                        name:'3号线',
+                        desc:''
+                        },
+                        {
+                        name:'4号线',
+                        desc:''
+                        },
+                        {
+                        name:'5号线(东川路-闵行)',
+                        desc:''
+                        },
+
+                        {
+                        name:'5号线(莘庄-奉贤新)',
+                        desc:''
+                        },
+                        {
+                        name:'6号线',
+                        desc:''
+                        },
+                        {
+                        name:'7号线',
+                        desc:''
+                        },
+                        {
+                        name:'8号线',
+                        desc:''
+                        },
+                        {
+                        name:'9号线',
+                        desc:''
+                        },
+                        {
+                        name:'10号线(虹桥火车)',
+                        desc:''
+                        },
+                        {
+                        name:'10号线(航中路-新江)',
+                        desc:''
+                        },
+                        {
+                        name:'11号线(花桥-迪士尼)',
+                        desc:''
+                        },
+                        {
+                        name:'12号线',
+                        desc:''
+                        },
+                        {
+                        name:'13号线',
+                        desc:''
+                        },
+                        {
+                        name:'16号线',
+                        desc:''
+                        },
+                        {
+                        name:'17号线',
+                        desc:''
+                        },
+                        {
+                        name:'浦江路',
+                        desc:''
+                        },
+                        {
+                        name:'磁悬浮',
+                        desc:''
+                        }
+                    ]
+                },
+                { 
+                    title:'商圈',
+                    local:[
+                        {
+                        name:'陆家嘴-张杨路',
+                        desc:''
+                        },
+                        {
+                        name:'南京东路',
+                        desc:''
+                        },
+                        {
+                        name:'淮海中路',
+                        desc:''
+                        },
+                        {
+                        name:'南京西路',
+                        desc:''
+                        },
+
+                        {
+                        name:'新虹桥天山',
+                        desc:''
+                        },
+                        {
+                        name:'四川北路',
+                        desc:''
+                        },
+                         {
+                        name:'五角场',
+                        desc:''
+                        },
+                         {
+                        name:'大宁',
+                        desc:''
+                        }
+                    ]
+                },
+                { 
+                    title:'热门',
+                    local:[
+                        {
+                        name:'上海新天地',
+                        desc:'14%房客选择'
+                        },
+                        {
+                        name:'田子坊',
+                        desc:'9%房客选择'
+                        },
+                        {
+                        name:'外滩',
+                        desc:''
+                        },
+                        {
+                        name:'陆家嘴',
+                        desc:''
+                        },
+                        {
+                        name:'上海迪士尼乐园',
+                        desc:''
+                        },
+                        {
+                        name:'虹桥火车站',
+                        desc:''
+                        },
+
+                        {
+                        name:'静安寺/南京西路',
+                        desc:''
+                        },
+                        {
+                        name:'人民广场',
+                        desc:''
+                        }
+                    ]
+                },
+                { 
+                    title:'高校',
+                    local:[
+                        {
+                        name:'华东大学',
+                        desc:''
+                        },
+                        {
+                        name:'复旦大学',
+                        desc:''
+                        },
+                        {
+                        name:'华东师范大学',
+                        desc:''
+                        },
+                        {
+                        name:'华东理工大学',
+                        desc:''
+                        },
+                        {
+                        name:'上海迪士尼乐园',
+                        desc:''
+                        },
+                        {
+                        name:'上海音乐学院',
+                        desc:''
+                        },
+                        {
+                        name:'上海戏剧学院',
+                        desc:''
+                        },
+                        {
+                        name:'上海纽约大学',
+                        desc:''
+                        },
+                        {
+                        name:'上海财经学院',
+                        desc:''
+                        },
+                        {
+                        name:'上海体育学院',
+                        desc:''
+                        }
+                    ]
+                },
+                { 
+                    title:'机场/火车站',
+                    local:[
+                        {
+                        name:'上海火车站',
+                        desc:''
+                        },
+                        {
+                        name:'上海南站',
+                        desc:''
+                        },
+                        {
+                        name:'虹桥国际机场',
+                        desc:''
+                        },
+                        {
+                        name:'南翔北站',
+                        desc:''
+                        },
+                        {
+                        name:'松翔北站',
+                        desc:''
+                        },
+                        {
+                        name:'浦东国家机场',
+                        desc:''
+                        },
+
+                        {
+                        name:'闵行站',
+                        desc:''
+                        },
+                        {
+                        name:'桃浦站',
+                        desc:''
+                        }
+                    ]
+                },
+                { 
+                    title:'周边游',
+                    local:[
+                        {
+                        name:'上海博物馆',
+                        desc:''
+                        },
+                        {
+                        name:'上海迪士尼度假区',
+                        desc:''
+                        },
+                        {
+                        name:'上海薰衣草公园',
+                        desc:''
+                        },
+                        {
+                        name:'上海欢乐谷',
+                        desc:''
+                        },
+                        {
+                        name:'上海辰山植物园',
+                        desc:''
+                        },
+                        {
+                        name:'上海大观园',
+                        desc:''
+                        }
+                    ]
+                },
+                { 
+                    title:'行政区',
+                    local:[
+                        {
+                        name:'黄浦区',
+                        desc:''
+                        },
+                        {
+                        name:'徐汇区',
+                        desc:''
+                        },
+                        {
+                        name:'长汇区',
+                        desc:''
+                        },
+                        {
+                        name:'虹口区',
+                        desc:''
+                        },
+                        {
+                        name:'杨浦区',
+                        desc:''
+                        },
+                        {
+                        name:'浦东新区',
+                        desc:''
+                        }
+                    ]
+                },
+            ]
+        }
+    },
+    methods: {
+        itemClick(item1) {
+            console.log(item1.name)
+            this.$router.go(-1)
+        }
+    }
+}
+</script>
+
+<style scoped>
+#search-condition {
+    position: relative;
+    z-index: 99;
+    background-color: #fff;
+}
+.condition-item {
+    border-bottom:1px solid #cccccc;
+    margin: 10px;
+    margin-top: 0px;
+    padding-bottom: 10px;
+    /* background-color: red; */
+}
+.item-title {
+    color: #000000;
+    font-weight: bold;
+}
+.item-local {
+    display: inline;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    margin: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+    line-height: 30px;
+    color: #222;
+    font-size: 15px;
+}
+.white {
+    background-color: #fff;
+    height: 10px;
+}
+</style>

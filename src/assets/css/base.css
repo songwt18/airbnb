@@ -1,0 +1,12 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+:root {
+    --color-green: #008489;
+    --color-pink: #e84361;
+    --color-gray: #717171;
+    --font-size: 14px;
+    --line-height: 1.5;
+}
